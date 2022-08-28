@@ -1,22 +1,22 @@
 import './App.css';
-import NavBar from "./components/NavBar";
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Productos from './components/Productos';
 
 function App() {
   return (
-    <div className="App">
-      <h1>HOLA MUNDO</h1>
-      <p>este es mi primer ejemplo de react</p>
-      <hr ></hr>
+    <div>
       <header>
-        <NavBar>
-
-        </NavBar>
-
-
-
+        <hr></hr>
+        <Header />
       </header>
-
-
+      <main>
+        <Productos />
+      </main>
+      <footer>
+        <hr></hr>
+        <Footer />
+      </footer>
     </div >
   );
 }
