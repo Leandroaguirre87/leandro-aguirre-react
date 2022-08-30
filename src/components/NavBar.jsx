@@ -1,12 +1,11 @@
 import React from "react";
 import logo from "./images/logo.png";
-import carrito from "./images/carrito.png";
 
-const Header = () => {
+const NavBar = () => {
   return (
     <div className="container">
       <ul className="nav d-flex align-items-center">
-        <a className="navbar">
+        <a className="navbar" href="logo">
           <img src={logo} alt="sodi" />
         </a>
         <li className="nav-item">
@@ -24,14 +23,9 @@ const Header = () => {
             Nosotros
           </a>
         </li>
-        <li className="nav-item">
-          <a className="nav-link" href="carro">
-            Carrito <img src={carrito} width="50" alt="carrito" />
-          </a>
-        </li>
       </ul>
     </div>
   );
 };
 
-export default Header;
+export default NavBar;
