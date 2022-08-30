@@ -1,4 +1,5 @@
 import React from "react";
+import CartWidget from "./CartWidget";
 import logo from "./images/logo.png";
 
 const NavBar = () => {
@@ -22,6 +23,9 @@ const NavBar = () => {
           <a className="nav-link" href="nosotros">
             Nosotros
           </a>
+        </li>
+        <li>
+          <CartWidget />
         </li>
       </ul>
     </div>

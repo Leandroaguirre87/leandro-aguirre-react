@@ -1,11 +1,11 @@
 import React from "react";
 
-const itemListContainer = () => {
+const ItemListContainer = ({ greeting }) => {
   return (
     <div>
-      <h3>Lorem ipsum dolor sit amet.</h3>
+      <h1 className="text-center">{greeting}</h1>
     </div>
   );
 };
 
-export default itemListContainer;
+export default ItemListContainer;
