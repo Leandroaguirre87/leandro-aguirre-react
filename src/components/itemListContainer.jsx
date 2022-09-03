@@ -4,7 +4,7 @@ import ItemCount from "./ItemCount";
 const ItemListContainer = ({ greeting }) => {
   return (
     <div>
-      <ItemCount stock="5" initial={1} />
+      <ItemCount stock="5" initial={1} onAdd={0} />
       <h1 className="text-center">{greeting}</h1>
     </div>
   );
