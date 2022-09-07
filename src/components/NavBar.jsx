@@ -24,9 +24,7 @@ const NavBar = () => {
             Nosotros
           </a>
         </li>
-        <li>
-          <CartWidget />
-        </li>
+        <CartWidget />
       </ul>
     </div>
   );

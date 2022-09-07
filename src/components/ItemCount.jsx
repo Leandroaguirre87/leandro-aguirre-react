@@ -24,10 +24,10 @@ const ItemCount = (props) => {
 
   return (
     <div>
-      <div class="card col-md-2">
-        <h5 class="card-title text-center">CONTADOR</h5>
+      <div className="card col-md-2">
+        <h5 className="card-title text-center">CONTADOR</h5>
         <button onClick={restar}>-</button>
-        <input type="text" value={contador} />
+        <p>{contador}</p>
 
         <button onClick={sumar}>+</button>
       </div>
