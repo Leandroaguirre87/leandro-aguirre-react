@@ -17,7 +17,9 @@ function App() {
       </main>
       <footer>
         <hr></hr>
-        <ItemDetailContainer />
+        <div>
+          <ItemDetailContainer />
+        </div>
         <Footer anio="2022" />
       </footer>
     </div >
