@@ -1,13 +1,12 @@
 import React from "react";
 import CartWidget from "./CartWidget";
-import logo from "./images/logo.png";
 
 const NavBar = () => {
   return (
     <div className="container">
       <ul className="nav d-flex align-items-center">
         <a className="navbar" href="logo">
-          <img src={logo} alt="sodi" />
+          <img src="./images/logo.png" alt="sodi" />
         </a>
         <li className="nav-item">
           <a className="nav-link active" aria-current="page" href="productos">
