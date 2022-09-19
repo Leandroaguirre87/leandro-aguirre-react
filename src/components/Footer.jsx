@@ -1,10 +1,11 @@
 import React from "react";
 
-const Footer = ({ anio }) => {
+const Footer = () => {
   return (
     <div>
+      <hr />
       <h6 className="text-center">
-        Todos los derechos reservados Sodimac S.A. {anio}
+        Todos los derechos reservados Sodimac S.A. 2022
       </h6>
     </div>
   );

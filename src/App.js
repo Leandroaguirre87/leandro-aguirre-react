@@ -1,29 +1,25 @@
-import './App.css';
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
-import Productos from './components/Productos';
-//import ItemListContainer from './components/ItemListContainer';
-//import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import ItemDetailContainer from './components/ItemDetailContainer';
+import ItemListContainer from './components/ItemListContainer';
+
 function App() {
   return (
-    //<BrowserRouter>
-    <div>
-      <header>
+    <>
+      <BrowserRouter>
         <NavBar />
-      </header>
-      <main>
-        <Productos />
-      </main>
-      <footer>
-        <hr></hr>
-        <div>
-          <ItemDetailContainer />
-        </div>
-        <Footer anio="2022" />
-      </footer>
-    </div >
-    //</BrowserRouter>
+        <Routes>
+          <Route exact path='/Productos' element={<ItemDetailContainer />} />
+          <Route exact path='/' element={<ItemListContainer />} />
+
+        </Routes>
+        <footer>
+          <Footer />
+        </footer>
+      </BrowserRouter>
+    </>
   );
 }
 

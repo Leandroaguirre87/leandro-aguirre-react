@@ -1,26 +1,32 @@
 import React, { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
-
-const producto = {
-  id: 1,
-  image: "./images/bologna.png",
-  title: "Cerámica de interior 50 x 50 cm Bologna gris 2.3 m2",
-  price: 5.701,
-};
+import { productos } from "./productos";
 
 const ItemDetailContainer = () => {
   const [data, setData] = useState({});
 
   useEffect(() => {
-    const getData = new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(producto);
-      }, 2000);
-    });
-    getData.then((res) => setData(res));
+    const getData = () =>
+      new Promise((resolve) => {
+        const product = productos.find((prod) => prod.id === 1);
+        setTimeout(() => {
+          resolve(product);
+        }, 2000);
+      });
+    getData()
+      .then((data) => {
+        setData(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }, []);
 
-  return <ItemDetail data={data} />;
+  return (
+    <div>
+      <ItemDetail data={data} />
+    </div>
+  );
 };
 
 export default ItemDetailContainer;

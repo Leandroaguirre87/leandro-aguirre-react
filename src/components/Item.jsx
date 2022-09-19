@@ -1,10 +1,14 @@
 import React from "react";
 
-const Item = ({ info }) => {
+const Item = ({ data }) => {
   return (
-    <div>
-      <img src={info.image} /> ,<p> {info.title} </p>
-      <p>{info.price} </p>
+    <div className="card">
+      <img src={data.image} alt="" />
+      <div className="infoCard">
+        <h2> {data.title} </h2>
+        <h3>{data.price} </h3>
+        <button className="btn-danger">Detalle del Producto</button>
+      </div>
     </div>
   );
 };
