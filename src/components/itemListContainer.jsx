@@ -3,7 +3,7 @@ import ItemList from "./ItemList";
 import { productos } from "./productos";
 
 function ItemListContainer() {
-  const [data, setData] = useState(0);
+  const [data, setData] = useState([]);
 
   useEffect(() => {
     const getData = () =>
