@@ -2,13 +2,17 @@ import React from "react";
 import ItemCount from "./ItemCount";
 
 const ItemDetail = ({ data }) => {
+  const onAdd = () => {
+    console.log("agregaste al carrito");
+  };
+
   return (
     <div className="container">
-      <img src="./images/bologna.png" width={100} alt={data.title} />
+      <img src={data.image} width={100} alt={data.title} />
       <div>
         <h2 className="text-center">{data.title}</h2>
         <p className="text-center">${data.price}</p>
-        <ItemCount stock="5" initial={1} onAdd={0} />
+        <ItemCount initial={1} stock={5} onAdd={onAdd} />
       </div>
     </div>
   );

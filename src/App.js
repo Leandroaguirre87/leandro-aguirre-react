@@ -2,8 +2,9 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
-import ItemDetailContainer from './components/ItemDetailContainer';
 import ItemListContainer from './components/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer';
+import Cart from './components/Cart';
 
 function App() {
   return (
@@ -11,13 +12,12 @@ function App() {
       <BrowserRouter>
         <NavBar />
         <Routes>
-          <Route exact path='/Productos' element={<ItemDetailContainer />} />
           <Route exact path='/' element={<ItemListContainer />} />
-
+          <Route exact path='/category/:categoria' element={< ItemListContainer />} />
+          <Route exact path='/product/:id' element={< ItemDetailContainer />} />
+          <Route exact path='/cart' element={<Cart />} />
         </Routes>
-        <footer>
-          <Footer />
-        </footer>
+        <Footer />
       </BrowserRouter>
     </>
   );

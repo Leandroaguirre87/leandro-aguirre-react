@@ -10,22 +10,18 @@ const NavBar = () => {
           <img src="./images/logo.png" alt="sodi" />
         </NavLink>
         <li className="nav-item">
-          <NavLink
-            className="nav-link active"
-            aria-current="page"
-            to="/Productos"
-          >
-            Productos
+          <NavLink className="nav-link active" aria-current="page" to="/">
+            Inicio
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink className="nav-link" to="/Registro">
-            Registro
+          <NavLink className="nav-link" to="/category/interior">
+            Productos Interior
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink className="nav-link" to="/Nosotros">
-            Nosotros
+          <NavLink className="nav-link" to="/category/exterior">
+            Productos Exterior
           </NavLink>
         </li>
         <CartWidget />

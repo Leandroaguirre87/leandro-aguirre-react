@@ -1,26 +1,28 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
 import { productos } from "./productos";
 
 function ItemListContainer() {
   const [data, setData] = useState([]);
 
-  useEffect(() => {
-    const getData = () =>
-      new Promise((res, rej) => {
-        setTimeout(() => {
-          res(productos);
-        }, 2000);
-      });
+  const { categoria } = useParams();
 
-    getData()
-      .then((data) => {
-        setData(data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
+  useEffect(() => {
+    const getData = new Promise((res) => {
+      setTimeout(() => {
+        res(productos);
+      }, 2000);
+    });
+
+    if (categoria) {
+      getData.then((res) =>
+        setData(res.filter((producto) => producto.category === categoria))
+      );
+    } else {
+      getData.then((res) => setData(res));
+    }
+  }, [categoria]);
 
   return (
     <div>
