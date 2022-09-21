@@ -6,8 +6,8 @@ const ItemDetail = ({ data }) => {
   const [goToCart, setGoToCart] = useState(false);
 
   const onAdd = (quantity) => {
-    console.log(`compraste ${quantity} unidades`);
     setGoToCart(true);
+    console.log(`compraste ${quantity} unidades`);
   };
 
   return (
@@ -16,6 +16,7 @@ const ItemDetail = ({ data }) => {
       <div>
         <h2 className="text-center">{data.title}</h2>
         <h1 className="text-center">${data.price}</h1>
+        <div></div>{" "}
         {goToCart ? (
           <Link to="/cart">Finalizar Compra</Link>
         ) : (
