@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 const ItemCount = (props) => {
   const [contador, setContador] = useState(props.initial);
-  const [stock, setStock] = useState(props.stock);
 
   function sumar() {
     if (contador < props.stock) {
@@ -16,12 +15,6 @@ const ItemCount = (props) => {
     }
   }
 
-  function agregar() {
-    if (contador <= stock) {
-      setStock(stock - contador);
-    }
-  }
-
   return (
     <div>
       <div className="card col-md-2">
@@ -32,13 +25,13 @@ const ItemCount = (props) => {
         <button onClick={sumar}>+</button>
       </div>
       <button
-        onClick={agregar}
+        onClick={() => props.onAdd(contador)}
         type="button"
         className="btn btn-outline-success"
       >
         Agregar al Carrito
       </button>
-      <p>El stock disponibe es: {stock}</p>
+      <p>El stock disponibe es: {props.stock}</p>
     </div>
   );
 };
