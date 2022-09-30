@@ -15,16 +15,27 @@ const ItemDetail = ({ data }) => {
 
   return (
     <div className="container">
-      <img src={data.image} width={100} alt={data.title} />
-      <div>
-        <h2 className="text-center">{data.title}</h2>
-        <h1 className="text-center">${data.price}</h1>
-        <div></div>{" "}
-        {goToCart ? (
-          <Link to="/cart">Finalizar Compra</Link>
-        ) : (
-          <ItemCount initial={1} stock={5} onAdd={onAdd} />
-        )}
+      <div className="row">
+        <div className="col-md-8 ">
+          <img
+            className="img-fluid"
+            src={data.image}
+            width={100}
+            alt={data.title}
+          />
+          <div>
+            <h2 className="text-center">{data.title}</h2>
+            <h1 className="text-center">${data.price}</h1>
+            <div></div>{" "}
+            {goToCart ? (
+              <Link to="/cart">
+                <button className="btn btn-success"> Finalizar Compra</button>
+              </Link>
+            ) : (
+              <ItemCount initial={1} stock={5} onAdd={onAdd} />
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );
