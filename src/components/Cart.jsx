@@ -26,6 +26,9 @@ const Cart = () => {
           Limpiar Carrito
         </button>
       </div>
+      <Link to="/checkout">
+        <button>Finalizar Compra</button>
+      </Link>
     </div>
   );
 };

@@ -17,16 +17,6 @@ function ItemListContainer() {
   useEffect(() => {
     const querydb = getFirestore();
     const queryCollection = collection(querydb, "items");
-    const queryFilter = query(
-      queryCollection,
-      where("category", "==", categoria)
-    );
-
-    getDocs(queryFilter).then((res) =>
-      setData(
-        res.docs.map((product) => ({ id: product.id, ...product.data() }))
-      )
-    );
 
     if (categoria) {
       const queryFilter = query(
